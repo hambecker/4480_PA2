@@ -159,6 +159,8 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 			for char in message.get_data():
 				checksum += ord(char)
 
+			checksum = checksum + self.alternating_bit_a + self.alternating_bit_a	
+
 			# create the packet to send to the transport layer
 			packet2 = Packet(self.alternating_bit_a, self.alternating_bit_a, checksum, message.get_data())
 
@@ -196,6 +198,26 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 		self.message_in_transit = False
 		self.stop_timer(0)
 
+		# extract the payload from the packet received from layer 3 and turn it into a message
+		message_from_b = Message(packet.get_payload())
+
+
+		# corruption calculation
+		checksum_check = 0
+		for char in message_from_b.get_data():
+			checksum_check += ord(char)
+
+		checksum_check = checksum_check + packet.get_seqnum() + packet.get_acknum()
+
+		# check if checksum is correct
+		if packet.get_checksum() != checksum_check:
+			print("Corruption detected: bad checksum for ack")
+			print("retransmitting: ", self.global_message.get_data())
+			self.resent_message = True
+			self.corrupt_acks = self.corrupt_acks + 1
+			self.a_output(self.global_message)
+			return
+
 		# check to see if ack number was the one just sent, if not resend the last message
 		if packet.get_acknum() != self.alternating_bit_a:
 			print("Corruption detected (Bad Ack num): retransmitting: ")
@@ -214,14 +236,6 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 			self.a_output(self.global_message)
 			return
 
-		# check if checksum is correct
-		if packet.get_checksum() != 0:
-			print("Corruption detected: bad checksum for ack")
-			print("retransmitting: ", self.global_message.get_data())
-			self.resent_message = True
-			self.corrupt_acks = self.corrupt_acks + 1
-			self.a_output(self.global_message)
-			return
 
 		# awk received okay, change the alternating_bit for A
 		self.successful_acks = self.successful_acks + 1
@@ -289,7 +303,6 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 	# sent from the A-side.
 
 	def b_input(self, packet):
-
 		self.received_packets_from_a = self.received_packets_from_a + 1
 
 		# extract the payload from the packet received from layer 3 and turn it into a message
@@ -299,6 +312,9 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 		checksum_check = 0
 		for char in self.message_to_5.get_data():
 			checksum_check += ord(char)
+
+		checksum_check = checksum_check + packet.get_seqnum() + packet.get_acknum()
+
 		if checksum_check != packet.get_checksum():
 			print('Corruption Detected!')
 			print('Checksum Field: ', packet.get_checksum())
@@ -316,6 +332,7 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 				print('Received wrong sequence number!')
 				print('Expected: ', 0)
 				print('Received: ', packet.get_seqnum())
+				self.incorrect_sequence_nums = self.incorrect_sequence_nums + 1
 				self.sent_acks = self.sent_acks + 1
 				self.to_layer3(1, self.send_packet_b)
 				return
@@ -328,7 +345,7 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 				self.to_layer5(1, self.message_to_5)
 
 				# create an awk packet of the correct packet being seen
-				self.send_packet_b = Packet(self.alternating_bit_b, self.alternating_bit_b, 0, "")
+				self.send_packet_b = Packet(self.alternating_bit_b, self.alternating_bit_b, checksum_check, packet.get_payload())
 
 				self.sent_acks = self.sent_acks + 1
 				# send the awk packet back to A
@@ -342,8 +359,9 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 			# if correct alternating bit not rec, send the awk of the of the number you wish to receive
 			if packet.get_seqnum() != 1:
 				print('Received wrong sequence number!')
-				print('Expected: ', 0)
+				print('Expected: ', 1)
 				print('Received: ', packet.get_seqnum())
+				self.incorrect_sequence_nums = self.incorrect_sequence_nums + 1
 				self.sent_acks = self.sent_acks + 1
 				self.to_layer3(1, self.send_packet_b)
 				return
@@ -356,7 +374,7 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 				self.to_layer5(1, self.message_to_5)
 
 				# create an awk packet of the correct packet being seen
-				self.send_packet_b = Packet(self.alternating_bit_b, self.alternating_bit_b, 0, "")
+				self.send_packet_b = Packet(self.alternating_bit_b, self.alternating_bit_b, checksum_check, packet.get_payload())
 
 				self.sent_acks = self.sent_acks + 1
 				# send the awk packet back to A

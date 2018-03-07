@@ -1,0 +1,2746 @@
+Network Simulator v1.0
+Enter number of messages to simulate (> 0):[10] Enter the paceket loss probablity (0.0 for no loss): [0.0] Enter the packet corruption probablity (0.0 for no corruption):[0.0] Enter the average time between messages from sender's layer 5 (> 0.0): [1000] Enter trace level (>=0): [0] Enter random seed: [random] received messages from layer 5: 	 10
+sent packets to b:  	 10
+messages discarded because a current message in transit:  	 0
+received packets from a:  	 9
+corrupt_packets_from_a:  	 0
+correct sequence numbers:  	 9
+Sent acks:  	 9
+Lost packets or acks:  	 0
+Resent packets because of loss:  	 0
+received acks:  	 9
+Successful acks:  	 9
+Corrupt acks:  	 0
+incorrect acks:  	 0
+Network Simulator v1.0
+Enter number of messages to simulate (> 0):[10] Enter the paceket loss probablity (0.0 for no loss): [0.0] Enter the packet corruption probablity (0.0 for no corruption):[0.0] Enter the average time between messages from sender's layer 5 (> 0.0): [1000] Enter trace level (>=0): [0] Enter random seed: [random] generate_next_arrival(): called
+generate_next_arrival(): time is 0.000000
+generate_next_arrival(): future time for event 1 at entity 0 will be 1318.657136
+
+
+EVENT time: 1318.657136
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 1318.657136
+generate_next_arrival(): future time for event 1 at entity 0 will be 1586.174575
+start_timer: starting timer at 1318.657136
+to_layer3: seqnum: 0 acknum: 0 checksum: 1940 payload: aaaaaaaaaaaaaaaaaaaa
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 1320.390703
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc0197ed30>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: packet being corrupted
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 1326.909730
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 1326.909730
+Corruption detected (Bad Ack num): retransmitting: 
+retransmitting:  aaaaaaaaaaaaaaaaaaaa
+start_timer: starting timer at 1326.909730
+to_layer3: seqnum: 0 acknum: 0 checksum: 1940 payload: aaaaaaaaaaaaaaaaaaaa
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 1328.094797
+ type: 2
+ entity: 1
+Received wrong sequence number!
+Expected:  0
+Received:  0
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 1329.306393
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 1329.306393
+
+
+EVENT time: 1586.174575
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 1586.174575
+generate_next_arrival(): future time for event 1 at entity 0 will be 3208.682730
+start_timer: starting timer at 1586.174575
+to_layer3: seqnum: 1 acknum: 1 checksum: 1960 payload: bbbbbbbbbbbbbbbbbbbb
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 1592.512323
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019aad30>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 1598.987025
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 1598.987025
+
+
+EVENT time: 3208.682730
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 3208.682730
+generate_next_arrival(): future time for event 1 at entity 0 will be 4806.787129
+start_timer: starting timer at 3208.682730
+to_layer3: seqnum: 0 acknum: 0 checksum: 1980 payload: cccccccccccccccccccc
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 3215.699579
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff417f98>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 3223.110802
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 3223.110802
+
+
+EVENT time: 4806.787129
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 4806.787129
+generate_next_arrival(): future time for event 1 at entity 0 will be 6339.553424
+start_timer: starting timer at 4806.787129
+to_layer3: seqnum: 1 acknum: 1 checksum: 2000 payload: dddddddddddddddddddd
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 4812.548987
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff419048>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 4819.525113
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 4819.525113
+
+
+EVENT time: 6339.553424
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 6339.553424
+generate_next_arrival(): future time for event 1 at entity 0 will be 8089.596277
+start_timer: starting timer at 6339.553424
+to_layer3: seqnum: 0 acknum: 0 checksum: 2020 payload: eeeeeeeeeeeeeeeeeeee
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 6343.380880
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbfefe1438>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 6348.977940
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 6348.977940
+
+
+EVENT time: 8089.596277
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 8089.596277
+generate_next_arrival(): future time for event 1 at entity 0 will be 8850.808331
+start_timer: starting timer at 8089.596277
+to_layer3: seqnum: 1 acknum: 1 checksum: 2040 payload: ffffffffffffffffffff
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 8094.776449
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbfefd16d8>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 8102.196110
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 8102.196110
+
+
+EVENT time: 8850.808331
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 8850.808331
+generate_next_arrival(): future time for event 1 at entity 0 will be 10635.445334
+start_timer: starting timer at 8850.808331
+to_layer3: seqnum: 0 acknum: 0 checksum: 2060 payload: gggggggggggggggggggg
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 8860.213518
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbfefd1d30>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 8865.610500
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 8865.610500
+
+
+EVENT time: 10635.445334
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 10635.445334
+generate_next_arrival(): future time for event 1 at entity 0 will be 10843.861935
+start_timer: starting timer at 10635.445334
+to_layer3: seqnum: 1 acknum: 1 checksum: 2080 payload: hhhhhhhhhhhhhhhhhhhh
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 10643.151258
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbfefd1710>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 10645.503111
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 10645.503111
+
+
+EVENT time: 10843.861935
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 10843.861935
+generate_next_arrival(): future time for event 1 at entity 0 will be 11002.997743
+start_timer: starting timer at 10843.861935
+to_layer3: seqnum: 0 acknum: 0 checksum: 2100 payload: iiiiiiiiiiiiiiiiiiii
+to_layer3: packet being corrupted
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 10852.186502
+ type: 2
+ entity: 1
+Received wrong sequence number!
+Expected:  0
+Received:  2562577007
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 10857.258027
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 10857.258027
+Corruption detected (Bad Ack num): retransmitting: 
+retransmitting:  iiiiiiiiiiiiiiiiiiii
+start_timer: starting timer at 10857.258027
+to_layer3: seqnum: 0 acknum: 0 checksum: 2100 payload: iiiiiiiiiiiiiiiiiiii
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 10865.299933
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbfefd1550>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 10875.096045
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 10875.096045
+
+
+EVENT time: 11002.997743
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 11002.997743
+generate_next_arrival(): future time for event 1 at entity 0 will be 12998.548646
+start_timer: starting timer at 11002.997743
+to_layer3: seqnum: 1 acknum: 1 checksum: 2120 payload: jjjjjjjjjjjjjjjjjjjj
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 11005.565867
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbfefd1828>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 11013.612574
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 11013.612574
+
+
+EVENT time: 12998.548646
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 12998.548646
+generate_next_arrival(): future time for event 1 at entity 0 will be 14167.402561
+start_timer: starting timer at 12998.548646
+to_layer3: seqnum: 0 acknum: 0 checksum: 2140 payload: kkkkkkkkkkkkkkkkkkkk
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 13004.272759
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7390>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 13013.685672
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 13013.685672
+
+
+EVENT time: 14167.402561
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 14167.402561
+generate_next_arrival(): future time for event 1 at entity 0 will be 14626.654526
+start_timer: starting timer at 14167.402561
+to_layer3: seqnum: 1 acknum: 1 checksum: 2160 payload: llllllllllllllllllll
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 14170.759779
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 14171.801856
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 14171.801856
+
+
+EVENT time: 14626.654526
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 14626.654526
+generate_next_arrival(): future time for event 1 at entity 0 will be 15864.525986
+start_timer: starting timer at 14626.654526
+to_layer3: seqnum: 0 acknum: 0 checksum: 2180 payload: mmmmmmmmmmmmmmmmmmmm
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 14629.524596
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7da0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 14633.739182
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 14633.739182
+
+
+EVENT time: 15864.525986
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 15864.525986
+generate_next_arrival(): future time for event 1 at entity 0 will be 16404.313657
+start_timer: starting timer at 15864.525986
+to_layer3: seqnum: 1 acknum: 1 checksum: 2200 payload: nnnnnnnnnnnnnnnnnnnn
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 15867.904350
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff41ec18>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 15870.681988
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 15870.681988
+
+
+EVENT time: 16404.313657
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 16404.313657
+generate_next_arrival(): future time for event 1 at entity 0 will be 16586.566253
+start_timer: starting timer at 16404.313657
+to_layer3: seqnum: 0 acknum: 0 checksum: 2220 payload: oooooooooooooooooooo
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 16409.482835
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 16418.662338
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 16418.662338
+
+
+EVENT time: 16586.566253
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 16586.566253
+generate_next_arrival(): future time for event 1 at entity 0 will be 17272.391593
+start_timer: starting timer at 16586.566253
+to_layer3: seqnum: 1 acknum: 1 checksum: 2240 payload: pppppppppppppppppppp
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 16593.789009
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019876a0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 16595.328994
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 16595.328994
+
+
+EVENT time: 17272.391593
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 17272.391593
+generate_next_arrival(): future time for event 1 at entity 0 will be 17449.806558
+start_timer: starting timer at 17272.391593
+to_layer3: seqnum: 0 acknum: 0 checksum: 2260 payload: qqqqqqqqqqqqqqqqqqqq
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 17277.663056
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc0197ed30>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 17284.861360
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 17284.861360
+
+
+EVENT time: 17449.806558
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 17449.806558
+generate_next_arrival(): future time for event 1 at entity 0 will be 18407.392150
+start_timer: starting timer at 17449.806558
+to_layer3: seqnum: 1 acknum: 1 checksum: 2280 payload: rrrrrrrrrrrrrrrrrrrr
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 17452.356489
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 17462.156977
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 17462.156977
+
+
+EVENT time: 18407.392150
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 18407.392150
+generate_next_arrival(): future time for event 1 at entity 0 will be 19570.257214
+start_timer: starting timer at 18407.392150
+to_layer3: seqnum: 0 acknum: 0 checksum: 2300 payload: ssssssssssssssssssss
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 18411.770634
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff41ec18>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 18420.590798
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 18420.590798
+
+
+EVENT time: 19570.257214
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 19570.257214
+generate_next_arrival(): future time for event 1 at entity 0 will be 20309.051856
+start_timer: starting timer at 19570.257214
+to_layer3: seqnum: 1 acknum: 1 checksum: 2320 payload: tttttttttttttttttttt
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 19579.163613
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7da0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 19582.121502
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 19582.121502
+
+
+EVENT time: 20309.051856
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 20309.051856
+generate_next_arrival(): future time for event 1 at entity 0 will be 20807.365434
+start_timer: starting timer at 20309.051856
+to_layer3: seqnum: 0 acknum: 0 checksum: 2340 payload: uuuuuuuuuuuuuuuuuuuu
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 20316.946104
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 20318.025092
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 20318.025092
+
+
+EVENT time: 20807.365434
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 20807.365434
+generate_next_arrival(): future time for event 1 at entity 0 will be 22340.109474
+start_timer: starting timer at 20807.365434
+to_layer3: seqnum: 1 acknum: 1 checksum: 2360 payload: vvvvvvvvvvvvvvvvvvvv
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 20810.372980
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7390>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 20819.352381
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 20819.352381
+
+
+EVENT time: 22340.109474
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 22340.109474
+generate_next_arrival(): future time for event 1 at entity 0 will be 22526.819734
+start_timer: starting timer at 22340.109474
+to_layer3: seqnum: 0 acknum: 0 checksum: 2380 payload: wwwwwwwwwwwwwwwwwwww
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 22341.234071
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987198>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 22342.405962
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 22342.405962
+
+
+EVENT time: 22526.819734
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 22526.819734
+generate_next_arrival(): future time for event 1 at entity 0 will be 23396.467207
+start_timer: starting timer at 22526.819734
+to_layer3: seqnum: 1 acknum: 1 checksum: 2400 payload: xxxxxxxxxxxxxxxxxxxx
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 22528.900737
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc0197ed30>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 22533.255076
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 22533.255076
+
+
+EVENT time: 23396.467207
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 23396.467207
+generate_next_arrival(): future time for event 1 at entity 0 will be 23651.939865
+start_timer: starting timer at 23396.467207
+to_layer3: seqnum: 0 acknum: 0 checksum: 2420 payload: yyyyyyyyyyyyyyyyyyyy
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 23402.461189
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 23405.366089
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 23405.366089
+
+
+EVENT time: 23651.939865
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 23651.939865
+generate_next_arrival(): future time for event 1 at entity 0 will be 23876.648450
+start_timer: starting timer at 23651.939865
+to_layer3: seqnum: 1 acknum: 1 checksum: 2440 payload: zzzzzzzzzzzzzzzzzzzz
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 23658.346339
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff41ec18>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 23665.733914
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 23665.733914
+
+
+EVENT time: 23876.648450
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 23876.648450
+generate_next_arrival(): future time for event 1 at entity 0 will be 24074.088684
+start_timer: starting timer at 23876.648450
+to_layer3: seqnum: 0 acknum: 0 checksum: 1940 payload: aaaaaaaaaaaaaaaaaaaa
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 23881.464675
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 23890.561432
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 23890.561432
+
+
+EVENT time: 24074.088684
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 24074.088684
+generate_next_arrival(): future time for event 1 at entity 0 will be 25927.027072
+start_timer: starting timer at 24074.088684
+to_layer3: seqnum: 1 acknum: 1 checksum: 1960 payload: bbbbbbbbbbbbbbbbbbbb
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 24077.028268
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7390>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 24086.028295
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 24086.028295
+
+
+EVENT time: 25927.027072
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 25927.027072
+generate_next_arrival(): future time for event 1 at entity 0 will be 27483.867418
+start_timer: starting timer at 25927.027072
+to_layer3: seqnum: 0 acknum: 0 checksum: 1980 payload: cccccccccccccccccccc
+to_layer3: packet being corrupted
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 25931.868928
+ type: 2
+ entity: 1
+Corruption Detected!
+Checksum Field:  1980
+calculated:  162
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 25937.047382
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 25937.047382
+Corruption detected (Bad Ack num): retransmitting: 
+retransmitting:  cccccccccccccccccccc
+start_timer: starting timer at 25937.047382
+to_layer3: seqnum: 0 acknum: 0 checksum: 1980 payload: cccccccccccccccccccc
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 25940.177906
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019aad30>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 25950.006248
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 25950.006248
+
+
+EVENT time: 27483.867418
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 27483.867418
+generate_next_arrival(): future time for event 1 at entity 0 will be 27510.389895
+start_timer: starting timer at 27483.867418
+to_layer3: seqnum: 1 acknum: 1 checksum: 2000 payload: dddddddddddddddddddd
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 27493.130064
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019876a0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 27499.061182
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 27499.061182
+
+
+EVENT time: 27510.389895
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 27510.389895
+generate_next_arrival(): future time for event 1 at entity 0 will be 29444.198640
+start_timer: starting timer at 27510.389895
+to_layer3: seqnum: 0 acknum: 0 checksum: 2020 payload: eeeeeeeeeeeeeeeeeeee
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 27516.950159
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 27522.738838
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 27522.738838
+
+
+EVENT time: 29444.198640
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 29444.198640
+generate_next_arrival(): future time for event 1 at entity 0 will be 30728.866686
+start_timer: starting timer at 29444.198640
+to_layer3: seqnum: 1 acknum: 1 checksum: 2040 payload: ffffffffffffffffffff
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 29449.762432
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987198>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 29454.168848
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 29454.168848
+
+
+EVENT time: 30728.866686
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 30728.866686
+generate_next_arrival(): future time for event 1 at entity 0 will be 32267.445459
+start_timer: starting timer at 30728.866686
+to_layer3: seqnum: 0 acknum: 0 checksum: 2060 payload: gggggggggggggggggggg
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 30732.461240
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc0197ed30>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 30741.838511
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 30741.838511
+
+
+EVENT time: 32267.445459
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 32267.445459
+generate_next_arrival(): future time for event 1 at entity 0 will be 32548.410920
+start_timer: starting timer at 32267.445459
+to_layer3: seqnum: 1 acknum: 1 checksum: 2080 payload: hhhhhhhhhhhhhhhhhhhh
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 32272.771722
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 32276.654210
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 32276.654210
+
+
+EVENT time: 32548.410920
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 32548.410920
+generate_next_arrival(): future time for event 1 at entity 0 will be 32715.668507
+start_timer: starting timer at 32548.410920
+to_layer3: seqnum: 0 acknum: 0 checksum: 2100 payload: iiiiiiiiiiiiiiiiiiii
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 32557.415933
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7da0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 32567.196328
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 32567.196328
+
+
+EVENT time: 32715.668507
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 32715.668507
+generate_next_arrival(): future time for event 1 at entity 0 will be 34687.653495
+start_timer: starting timer at 32715.668507
+to_layer3: seqnum: 1 acknum: 1 checksum: 2120 payload: jjjjjjjjjjjjjjjjjjjj
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 32720.616975
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7390>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 32722.149099
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 32722.149099
+
+
+EVENT time: 34687.653495
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 34687.653495
+generate_next_arrival(): future time for event 1 at entity 0 will be 36480.903738
+start_timer: starting timer at 34687.653495
+to_layer3: seqnum: 0 acknum: 0 checksum: 2140 payload: kkkkkkkkkkkkkkkkkkkk
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 34697.097545
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019876a0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 34702.311219
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 34702.311219
+
+
+EVENT time: 36480.903738
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 36480.903738
+generate_next_arrival(): future time for event 1 at entity 0 will be 38272.283987
+start_timer: starting timer at 36480.903738
+to_layer3: seqnum: 1 acknum: 1 checksum: 2160 payload: llllllllllllllllllll
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 36482.314962
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 36489.517309
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 36489.517309
+
+
+EVENT time: 38272.283987
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 38272.283987
+generate_next_arrival(): future time for event 1 at entity 0 will be 39923.700029
+start_timer: starting timer at 38272.283987
+to_layer3: seqnum: 0 acknum: 0 checksum: 2180 payload: mmmmmmmmmmmmmmmmmmmm
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 38273.441406
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff41ec18>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 38279.462598
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 38279.462598
+
+
+EVENT time: 39923.700029
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 39923.700029
+generate_next_arrival(): future time for event 1 at entity 0 will be 41579.818752
+start_timer: starting timer at 39923.700029
+to_layer3: seqnum: 1 acknum: 1 checksum: 2200 payload: nnnnnnnnnnnnnnnnnnnn
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 39932.890399
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc0197ed30>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 39935.349820
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 39935.349820
+
+
+EVENT time: 41579.818752
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 41579.818752
+generate_next_arrival(): future time for event 1 at entity 0 will be 43213.444861
+start_timer: starting timer at 41579.818752
+to_layer3: seqnum: 0 acknum: 0 checksum: 2220 payload: oooooooooooooooooooo
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 41586.582092
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: packet being corrupted
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 41596.336562
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 41596.336562
+Corruption detected (Bad Ack num): retransmitting: 
+retransmitting:  oooooooooooooooooooo
+start_timer: starting timer at 41596.336562
+to_layer3: seqnum: 0 acknum: 0 checksum: 2220 payload: oooooooooooooooooooo
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 41605.141446
+ type: 2
+ entity: 1
+Received wrong sequence number!
+Expected:  0
+Received:  0
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 41606.434050
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 41606.434050
+
+
+EVENT time: 43213.444861
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 43213.444861
+generate_next_arrival(): future time for event 1 at entity 0 will be 44266.294976
+start_timer: starting timer at 43213.444861
+to_layer3: seqnum: 1 acknum: 1 checksum: 2240 payload: pppppppppppppppppppp
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 43216.661255
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7390>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 43221.993563
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 43221.993563
+
+
+EVENT time: 44266.294976
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 44266.294976
+generate_next_arrival(): future time for event 1 at entity 0 will be 44448.401309
+start_timer: starting timer at 44266.294976
+to_layer3: seqnum: 0 acknum: 0 checksum: 2260 payload: qqqqqqqqqqqqqqqqqqqq
+to_layer3: packet being corrupted
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 44272.699452
+ type: 2
+ entity: 1
+Received wrong sequence number!
+Expected:  0
+Received:  1639217907
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: packet being corrupted
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 44277.065265
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 44277.065265
+Corruption detected (Bad Ack num): retransmitting: 
+retransmitting:  qqqqqqqqqqqqqqqqqqqq
+start_timer: starting timer at 44277.065265
+to_layer3: seqnum: 0 acknum: 0 checksum: 2260 payload: qqqqqqqqqqqqqqqqqqqq
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 44280.003566
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 44283.726526
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 44283.726526
+
+
+EVENT time: 44448.401309
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 44448.401309
+generate_next_arrival(): future time for event 1 at entity 0 will be 45658.070308
+start_timer: starting timer at 44448.401309
+to_layer3: seqnum: 1 acknum: 1 checksum: 2280 payload: rrrrrrrrrrrrrrrrrrrr
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 44457.729169
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987198>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 44467.006254
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 44467.006254
+
+
+EVENT time: 45658.070308
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 45658.070308
+generate_next_arrival(): future time for event 1 at entity 0 will be 46868.915042
+start_timer: starting timer at 45658.070308
+to_layer3: seqnum: 0 acknum: 0 checksum: 2300 payload: ssssssssssssssssssss
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 45667.992696
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7da0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 45677.191411
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 45677.191411
+
+
+EVENT time: 46868.915042
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 46868.915042
+generate_next_arrival(): future time for event 1 at entity 0 will be 48717.509820
+start_timer: starting timer at 46868.915042
+to_layer3: seqnum: 1 acknum: 1 checksum: 2320 payload: tttttttttttttttttttt
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 46877.399642
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 46881.342253
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 46881.342253
+
+
+EVENT time: 48717.509820
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 48717.509820
+generate_next_arrival(): future time for event 1 at entity 0 will be 49958.892291
+start_timer: starting timer at 48717.509820
+to_layer3: seqnum: 0 acknum: 0 checksum: 2340 payload: uuuuuuuuuuuuuuuuuuuu
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 48719.549160
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019aad30>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 48728.510675
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 48728.510675
+
+
+EVENT time: 49958.892291
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 49958.892291
+generate_next_arrival(): future time for event 1 at entity 0 will be 50544.135646
+start_timer: starting timer at 49958.892291
+to_layer3: seqnum: 1 acknum: 1 checksum: 2360 payload: vvvvvvvvvvvvvvvvvvvv
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 49959.895785
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff41ec18>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 49969.708923
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 49969.708923
+
+
+EVENT time: 50544.135646
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 50544.135646
+generate_next_arrival(): future time for event 1 at entity 0 will be 51226.955952
+start_timer: starting timer at 50544.135646
+to_layer3: seqnum: 0 acknum: 0 checksum: 2380 payload: wwwwwwwwwwwwwwwwwwww
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 50545.386981
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc0197ed30>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 50555.142961
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 50555.142961
+
+
+EVENT time: 51226.955952
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 51226.955952
+generate_next_arrival(): future time for event 1 at entity 0 will be 53078.600273
+start_timer: starting timer at 51226.955952
+to_layer3: seqnum: 1 acknum: 1 checksum: 2400 payload: xxxxxxxxxxxxxxxxxxxx
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 51228.812447
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 51237.680275
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 51237.680275
+
+
+EVENT time: 53078.600273
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 53078.600273
+generate_next_arrival(): future time for event 1 at entity 0 will be 53255.482024
+start_timer: starting timer at 53078.600273
+to_layer3: seqnum: 0 acknum: 0 checksum: 2420 payload: yyyyyyyyyyyyyyyyyyyy
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 53080.403610
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7390>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: packet being corrupted
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 53082.906659
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 53082.906659
+
+
+EVENT time: 53255.482024
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 53255.482024
+generate_next_arrival(): future time for event 1 at entity 0 will be 54186.490467
+start_timer: starting timer at 53255.482024
+to_layer3: seqnum: 1 acknum: 1 checksum: 2440 payload: zzzzzzzzzzzzzzzzzzzz
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 53259.016975
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7da0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: packet being corrupted
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 53267.613085
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 53267.613085
+
+
+EVENT time: 54186.490467
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 54186.490467
+generate_next_arrival(): future time for event 1 at entity 0 will be 55760.657130
+start_timer: starting timer at 54186.490467
+to_layer3: seqnum: 0 acknum: 0 checksum: 1940 payload: aaaaaaaaaaaaaaaaaaaa
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 54188.861582
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 54190.159013
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 54190.159013
+
+
+EVENT time: 55760.657130
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 55760.657130
+generate_next_arrival(): future time for event 1 at entity 0 will be 55764.896331
+start_timer: starting timer at 55760.657130
+to_layer3: seqnum: 1 acknum: 1 checksum: 1960 payload: bbbbbbbbbbbbbbbbbbbb
+to_layer3: packet being corrupted
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 55762.593633
+ type: 2
+ entity: 1
+Corruption Detected!
+Checksum Field:  1960
+calculated:  161
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 55764.896331
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 55764.896331
+generate_next_arrival(): future time for event 1 at entity 0 will be 57283.909097
+message discarded because a current message is in progress
+message:  cccccccccccccccccccc
+
+
+EVENT time: 55765.239411
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 55765.239411
+Corruption detected (Bad Ack num): retransmitting: 
+retransmitting:  bbbbbbbbbbbbbbbbbbbb
+start_timer: starting timer at 55765.239411
+to_layer3: seqnum: 1 acknum: 1 checksum: 1960 payload: bbbbbbbbbbbbbbbbbbbb
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 55770.357113
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987208>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 55777.643369
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 55777.643369
+
+
+EVENT time: 57283.909097
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 57283.909097
+generate_next_arrival(): future time for event 1 at entity 0 will be 58632.268345
+start_timer: starting timer at 57283.909097
+to_layer3: seqnum: 0 acknum: 0 checksum: 2000 payload: dddddddddddddddddddd
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 57285.182907
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019876a0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 57293.285777
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 57293.285777
+
+
+EVENT time: 58632.268345
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 58632.268345
+generate_next_arrival(): future time for event 1 at entity 0 will be 59878.722875
+start_timer: starting timer at 58632.268345
+to_layer3: seqnum: 1 acknum: 1 checksum: 2020 payload: eeeeeeeeeeeeeeeeeeee
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 58633.740696
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987d30>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 58635.467812
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 58635.467812
+
+
+EVENT time: 59878.722875
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 59878.722875
+generate_next_arrival(): future time for event 1 at entity 0 will be 60288.042799
+start_timer: starting timer at 59878.722875
+to_layer3: seqnum: 0 acknum: 0 checksum: 2040 payload: ffffffffffffffffffff
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 59882.754109
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 59890.368415
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 59890.368415
+
+
+EVENT time: 60288.042799
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 60288.042799
+generate_next_arrival(): future time for event 1 at entity 0 will be 62012.217081
+start_timer: starting timer at 60288.042799
+to_layer3: seqnum: 1 acknum: 1 checksum: 2060 payload: gggggggggggggggggggg
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 60290.032243
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc0197ed30>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 60296.265951
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 60296.265951
+
+
+EVENT time: 62012.217081
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 62012.217081
+generate_next_arrival(): future time for event 1 at entity 0 will be 63761.951121
+start_timer: starting timer at 62012.217081
+to_layer3: seqnum: 0 acknum: 0 checksum: 2080 payload: hhhhhhhhhhhhhhhhhhhh
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 62014.811039
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 62021.207910
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 62021.207910
+
+
+EVENT time: 63761.951121
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 63761.951121
+generate_next_arrival(): future time for event 1 at entity 0 will be 64724.850340
+start_timer: starting timer at 63761.951121
+to_layer3: seqnum: 1 acknum: 1 checksum: 2100 payload: iiiiiiiiiiiiiiiiiiii
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 63770.649829
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987d30>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 63775.408555
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 63775.408555
+
+
+EVENT time: 64724.850340
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 64724.850340
+generate_next_arrival(): future time for event 1 at entity 0 will be 65565.972957
+start_timer: starting timer at 64724.850340
+to_layer3: seqnum: 0 acknum: 0 checksum: 2120 payload: jjjjjjjjjjjjjjjjjjjj
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 64726.025588
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff41ec18>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 64731.681110
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 64731.681110
+
+
+EVENT time: 65565.972957
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 65565.972957
+generate_next_arrival(): future time for event 1 at entity 0 will be 67058.359257
+start_timer: starting timer at 65565.972957
+to_layer3: seqnum: 1 acknum: 1 checksum: 2140 payload: kkkkkkkkkkkkkkkkkkkk
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 65570.804561
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987198>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: packet being corrupted
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 65579.510607
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 65579.510607
+Corruption detected (Bad Ack num): retransmitting: 
+retransmitting:  kkkkkkkkkkkkkkkkkkkk
+start_timer: starting timer at 65579.510607
+to_layer3: seqnum: 1 acknum: 1 checksum: 2140 payload: kkkkkkkkkkkkkkkkkkkk
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 65585.969424
+ type: 2
+ entity: 1
+Received wrong sequence number!
+Expected:  0
+Received:  1
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 65591.781693
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 65591.781693
+
+
+EVENT time: 67058.359257
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 67058.359257
+generate_next_arrival(): future time for event 1 at entity 0 will be 68658.312510
+start_timer: starting timer at 67058.359257
+to_layer3: seqnum: 0 acknum: 0 checksum: 2160 payload: llllllllllllllllllll
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 67063.259710
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7da0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 67071.403414
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 67071.403414
+
+
+EVENT time: 68658.312510
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 68658.312510
+generate_next_arrival(): future time for event 1 at entity 0 will be 70651.045745
+start_timer: starting timer at 68658.312510
+to_layer3: seqnum: 1 acknum: 1 checksum: 2180 payload: mmmmmmmmmmmmmmmmmmmm
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 68660.297047
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 68669.666978
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 68669.666978
+
+
+EVENT time: 70651.045745
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 70651.045745
+generate_next_arrival(): future time for event 1 at entity 0 will be 71213.922981
+start_timer: starting timer at 70651.045745
+to_layer3: seqnum: 0 acknum: 0 checksum: 2200 payload: nnnnnnnnnnnnnnnnnnnn
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 70656.639676
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019876a0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 70660.002319
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 70660.002319
+
+
+EVENT time: 71213.922981
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 71213.922981
+generate_next_arrival(): future time for event 1 at entity 0 will be 72984.160675
+start_timer: starting timer at 71213.922981
+to_layer3: seqnum: 1 acknum: 1 checksum: 2220 payload: oooooooooooooooooooo
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 71219.186025
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 71228.035428
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 71228.035428
+
+
+EVENT time: 72984.160675
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 72984.160675
+generate_next_arrival(): future time for event 1 at entity 0 will be 74510.335375
+start_timer: starting timer at 72984.160675
+to_layer3: seqnum: 0 acknum: 0 checksum: 2240 payload: pppppppppppppppppppp
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 72991.723707
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987198>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 72995.993325
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 72995.993325
+
+
+EVENT time: 74510.335375
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 74510.335375
+generate_next_arrival(): future time for event 1 at entity 0 will be 76482.358226
+start_timer: starting timer at 74510.335375
+to_layer3: seqnum: 1 acknum: 1 checksum: 2260 payload: qqqqqqqqqqqqqqqqqqqq
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 74517.083018
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff41ec18>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 74522.351175
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 74522.351175
+
+
+EVENT time: 76482.358226
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 76482.358226
+generate_next_arrival(): future time for event 1 at entity 0 will be 76847.505334
+start_timer: starting timer at 76482.358226
+to_layer3: seqnum: 0 acknum: 0 checksum: 2280 payload: rrrrrrrrrrrrrrrrrrrr
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 76484.354597
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc0197ed30>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 76492.401273
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 76492.401273
+
+
+EVENT time: 76847.505334
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 76847.505334
+generate_next_arrival(): future time for event 1 at entity 0 will be 77305.133766
+start_timer: starting timer at 76847.505334
+to_layer3: seqnum: 1 acknum: 1 checksum: 2300 payload: ssssssssssssssssssss
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 76856.897733
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 76863.939872
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 76863.939872
+
+
+EVENT time: 77305.133766
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 77305.133766
+generate_next_arrival(): future time for event 1 at entity 0 will be 79172.884200
+start_timer: starting timer at 77305.133766
+to_layer3: seqnum: 0 acknum: 0 checksum: 2320 payload: tttttttttttttttttttt
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 77312.059090
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987d30>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 77320.586468
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 77320.586468
+
+
+EVENT time: 79172.884200
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 79172.884200
+generate_next_arrival(): future time for event 1 at entity 0 will be 80540.366600
+start_timer: starting timer at 79172.884200
+to_layer3: seqnum: 1 acknum: 1 checksum: 2340 payload: uuuuuuuuuuuuuuuuuuuu
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 79181.483217
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 79189.430973
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 79189.430973
+
+
+EVENT time: 80540.366600
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 80540.366600
+generate_next_arrival(): future time for event 1 at entity 0 will be 81899.881713
+start_timer: starting timer at 80540.366600
+to_layer3: seqnum: 0 acknum: 0 checksum: 2360 payload: vvvvvvvvvvvvvvvvvvvv
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 80547.507899
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987208>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 80553.714841
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 80553.714841
+
+
+EVENT time: 81899.881713
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 81899.881713
+generate_next_arrival(): future time for event 1 at entity 0 will be 82829.022795
+start_timer: starting timer at 81899.881713
+to_layer3: seqnum: 1 acknum: 1 checksum: 2380 payload: wwwwwwwwwwwwwwwwwwww
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 81906.034304
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987198>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 81909.183477
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 81909.183477
+
+
+EVENT time: 82829.022795
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 82829.022795
+generate_next_arrival(): future time for event 1 at entity 0 will be 84094.176119
+start_timer: starting timer at 82829.022795
+to_layer3: seqnum: 0 acknum: 0 checksum: 2400 payload: xxxxxxxxxxxxxxxxxxxx
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 82834.967484
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff41ec18>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 82843.573078
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 82843.573078
+
+
+EVENT time: 84094.176119
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 84094.176119
+generate_next_arrival(): future time for event 1 at entity 0 will be 84524.673693
+start_timer: starting timer at 84094.176119
+to_layer3: seqnum: 1 acknum: 1 checksum: 2420 payload: yyyyyyyyyyyyyyyyyyyy
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 84099.683246
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7da0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 84108.783040
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 84108.783040
+
+
+EVENT time: 84524.673693
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 84524.673693
+generate_next_arrival(): future time for event 1 at entity 0 will be 84527.363936
+start_timer: starting timer at 84524.673693
+to_layer3: seqnum: 0 acknum: 0 checksum: 2440 payload: zzzzzzzzzzzzzzzzzzzz
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 84527.363936
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 84527.363936
+generate_next_arrival(): future time for event 1 at entity 0 will be 85308.806154
+message discarded because a current message is in progress
+message:  aaaaaaaaaaaaaaaaaaaa
+
+
+EVENT time: 84531.400240
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 84537.578252
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 84537.578252
+
+
+EVENT time: 85308.806154
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 85308.806154
+generate_next_arrival(): future time for event 1 at entity 0 will be 87015.053274
+start_timer: starting timer at 85308.806154
+to_layer3: seqnum: 1 acknum: 1 checksum: 1960 payload: bbbbbbbbbbbbbbbbbbbb
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 85314.974012
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc0197ed30>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 85318.156845
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 85318.156845
+
+
+EVENT time: 87015.053274
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 87015.053274
+generate_next_arrival(): future time for event 1 at entity 0 will be 88144.592226
+start_timer: starting timer at 87015.053274
+to_layer3: seqnum: 0 acknum: 0 checksum: 1980 payload: cccccccccccccccccccc
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 87023.596989
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 87030.050059
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 87030.050059
+
+
+EVENT time: 88144.592226
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 88144.592226
+generate_next_arrival(): future time for event 1 at entity 0 will be 89611.459474
+start_timer: starting timer at 88144.592226
+to_layer3: seqnum: 1 acknum: 1 checksum: 2000 payload: dddddddddddddddddddd
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 88148.943220
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7da0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 88156.098108
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 88156.098108
+
+
+EVENT time: 89611.459474
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 89611.459474
+generate_next_arrival(): future time for event 1 at entity 0 will be 91154.277929
+start_timer: starting timer at 89611.459474
+to_layer3: seqnum: 0 acknum: 0 checksum: 2020 payload: eeeeeeeeeeeeeeeeeeee
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 89615.599247
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff41ec18>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 89619.251300
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 89619.251300
+
+
+EVENT time: 91154.277929
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 91154.277929
+generate_next_arrival(): future time for event 1 at entity 0 will be 92940.856681
+start_timer: starting timer at 91154.277929
+to_layer3: seqnum: 1 acknum: 1 checksum: 2040 payload: ffffffffffffffffffff
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 91156.242144
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7390>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 91161.832523
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 91161.832523
+
+
+EVENT time: 92940.856681
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 92940.856681
+generate_next_arrival(): future time for event 1 at entity 0 will be 93854.966442
+start_timer: starting timer at 92940.856681
+to_layer3: seqnum: 0 acknum: 0 checksum: 2060 payload: gggggggggggggggggggg
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 92948.290266
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987d30>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 92958.229168
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 92958.229168
+
+
+EVENT time: 93854.966442
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 93854.966442
+generate_next_arrival(): future time for event 1 at entity 0 will be 94753.855955
+start_timer: starting timer at 93854.966442
+to_layer3: seqnum: 1 acknum: 1 checksum: 2080 payload: hhhhhhhhhhhhhhhhhhhh
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 93862.943282
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 93864.646218
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 93864.646218
+
+
+EVENT time: 94753.855955
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 94753.855955
+generate_next_arrival(): future time for event 1 at entity 0 will be 96390.555060
+start_timer: starting timer at 94753.855955
+to_layer3: seqnum: 0 acknum: 0 checksum: 2100 payload: iiiiiiiiiiiiiiiiiiii
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 94758.304787
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc0197ed30>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 94764.403071
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 94764.403071
+
+
+EVENT time: 96390.555060
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 96390.555060
+generate_next_arrival(): future time for event 1 at entity 0 will be 96400.931430
+start_timer: starting timer at 96390.555060
+to_layer3: seqnum: 1 acknum: 1 checksum: 2120 payload: jjjjjjjjjjjjjjjjjjjj
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 96393.271484
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 96394.436108
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 96394.436108
+
+
+EVENT time: 96400.931430
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 96400.931430
+generate_next_arrival(): future time for event 1 at entity 0 will be 97272.438784
+start_timer: starting timer at 96400.931430
+to_layer3: seqnum: 0 acknum: 0 checksum: 2140 payload: kkkkkkkkkkkkkkkkkkkk
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 96406.180977
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff41ec18>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 96416.180774
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 96416.180774
+
+
+EVENT time: 97272.438784
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 97272.438784
+generate_next_arrival(): future time for event 1 at entity 0 will be 98840.222347
+start_timer: starting timer at 97272.438784
+to_layer3: seqnum: 1 acknum: 1 checksum: 2160 payload: llllllllllllllllllll
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 97277.752516
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7390>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 97281.823759
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 97281.823759
+
+
+EVENT time: 98840.222347
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 98840.222347
+generate_next_arrival(): future time for event 1 at entity 0 will be 100209.105591
+start_timer: starting timer at 98840.222347
+to_layer3: seqnum: 0 acknum: 0 checksum: 2180 payload: mmmmmmmmmmmmmmmmmmmm
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 98850.178438
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7da0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 98855.977528
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 98855.977528
+
+
+EVENT time: 100209.105591
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 100209.105591
+generate_next_arrival(): future time for event 1 at entity 0 will be 101835.495840
+start_timer: starting timer at 100209.105591
+to_layer3: seqnum: 1 acknum: 1 checksum: 2200 payload: nnnnnnnnnnnnnnnnnnnn
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 100217.789362
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019876a0>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 100221.941895
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 100221.941895
+
+
+EVENT time: 101835.495840
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 101835.495840
+generate_next_arrival(): future time for event 1 at entity 0 will be 102405.153212
+start_timer: starting timer at 101835.495840
+to_layer3: seqnum: 0 acknum: 0 checksum: 2220 payload: oooooooooooooooooooo
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 101838.055508
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff4051d0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 101845.439892
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 101845.439892
+
+
+EVENT time: 102405.153212
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 102405.153212
+generate_next_arrival(): future time for event 1 at entity 0 will be 103883.963878
+start_timer: starting timer at 102405.153212
+to_layer3: seqnum: 1 acknum: 1 checksum: 2240 payload: pppppppppppppppppppp
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 102412.818924
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc0197ed30>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 102413.992612
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 102413.992612
+
+
+EVENT time: 103883.963878
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 103883.963878
+generate_next_arrival(): future time for event 1 at entity 0 will be 105810.524013
+start_timer: starting timer at 103883.963878
+to_layer3: seqnum: 0 acknum: 0 checksum: 2260 payload: qqqqqqqqqqqqqqqqqqqq
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 103893.018934
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc019a69e8>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 103896.493373
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 103896.493373
+
+
+EVENT time: 105810.524013
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 105810.524013
+generate_next_arrival(): future time for event 1 at entity 0 will be 106256.747780
+start_timer: starting timer at 105810.524013
+to_layer3: seqnum: 1 acknum: 1 checksum: 2280 payload: rrrrrrrrrrrrrrrrrrrr
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 105812.065509
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff41ec18>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 105815.685318
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 105815.685318
+
+
+EVENT time: 106256.747780
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 106256.747780
+generate_next_arrival(): future time for event 1 at entity 0 will be 108035.021448
+start_timer: starting timer at 106256.747780
+to_layer3: seqnum: 0 acknum: 0 checksum: 2300 payload: ssssssssssssssssssss
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 106266.215446
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7da0>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 106267.569510
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 106267.569510
+
+
+EVENT time: 108035.021448
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 108035.021448
+generate_next_arrival(): future time for event 1 at entity 0 will be 108257.714636
+start_timer: starting timer at 108035.021448
+to_layer3: seqnum: 1 acknum: 1 checksum: 2320 payload: tttttttttttttttttttt
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 108044.733898
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbbff3f7390>
+to_layer3: seqnum: 1 acknum: 1 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 108047.071686
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 108047.071686
+
+
+EVENT time: 108257.714636
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 108257.714636
+generate_next_arrival(): future time for event 1 at entity 0 will be 108375.910097
+start_timer: starting timer at 108257.714636
+to_layer3: seqnum: 0 acknum: 0 checksum: 2340 payload: uuuuuuuuuuuuuuuuuuuu
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 108259.880173
+ type: 2
+ entity: 1
+to_layer5: data received
+<message.Message object at 0x7fbc01987d30>
+to_layer3: seqnum: 0 acknum: 0 checksum: 0 payload: 
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 108267.591929
+ type: 2
+ entity: 0
+stop_timer: stopping timer at 108267.591929
+
+
+EVENT time: 108375.910097
+ type: 1
+ entity: 0
+generate_next_arrival(): called
+generate_next_arrival(): time is 108375.910097
+generate_next_arrival(): future time for event 1 at entity 0 will be 109467.903386
+start_timer: starting timer at 108375.910097
+to_layer3: seqnum: 1 acknum: 1 checksum: 2360 payload: vvvvvvvvvvvvvvvvvvvv
+to_layer3: scheduling arrival on other side
+
+
+EVENT time: 108383.006218
+ type: 2
+ entity: 1
+received messages from layer 5: 	 100
+sent packets to b:  	 105
+messages discarded because a current message in transit:  	 2
+received packets from a:  	 104
+corrupt_packets_from_a:  	 7
+correct sequence numbers:  	 97
+Sent acks:  	 104
+Lost packets or acks:  	 0
+Resent packets because of loss:  	 7
+received acks:  	 104
+Successful acks:  	 97
+Corrupt acks:  	 0
+incorrect acks:  	 7

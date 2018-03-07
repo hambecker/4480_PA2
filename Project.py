@@ -119,6 +119,7 @@ def main():
     print('received packets from a: ', '\t', simulator.received_packets_from_a)
     print('corrupt_packets_from_a: ', '\t', simulator.corrupt_packets_from_a)
     print('correct sequence numbers: ', '\t', simulator.correct_sequence_nums)
+    print('incorrect sequence numbers: ', '\t', simulator.incorrect_sequence_nums)
     print('Sent acks: ', '\t', simulator.sent_acks)
 
     # Timeout
