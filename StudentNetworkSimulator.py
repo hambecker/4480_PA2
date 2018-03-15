@@ -394,7 +394,7 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 		self.alternating_bit_b = 0
 
 		# Set the default message back in case there is an a wrong packet sent first, first packet should be seq 0
-		self.send_packet_b = Packet(0, 0, 0, "")
+		self.send_packet_b = Packet(1, 1, 0, "")
 
 		# Set a message object that will be transported to top layer 5 from B
 		self.message_to_5 = Message("")
