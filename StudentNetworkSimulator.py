@@ -96,12 +96,25 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 	# state information for A or B.
 	# Also add any necessary methods (e.g. checksum of a String)
 
-	message_in_transit = False
-	global_message = ""
-	alternating_bit_a = 0
-	alternating_bit_b = 0
+	# alternating bit set-up
+	# message_in_transit = False
+	# global_message = ""
+	# alternating_bit_a = 0
+	# alternating_bit_b = 0
+	# send_packet_b = Packet(0, 0, 0, "")
+	# message_to_5 = ""
+
+	# GBN set up
+	next_sequence_num = 0
+	base = 0
+	N = 8
+	buffer = []
+	send_packets = {}
+	expected_sequence_num = 0
+	message_to_5 = Message("")
 	send_packet_b = Packet(0, 0, 0, "")
-	message_to_5 = ""
+	timer_amount = 10
+	buffer_used = 0
 
 	# Stats in A
 	received_messages = 0
@@ -139,46 +152,47 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 		args[2]=checksum
 		args[3]=payload string
 		"""
-		if self.resent_message is False:
-			# statistic for output
-			self.received_messages = self.received_messages + 1
-		else:
-			self.resent_messages = self.resent_messages + 1
-			self.resent_message = False
-
-		# print(self.received_messages)
+		# statistic for output
+		self.received_messages = self.received_messages + 1
 
 		# reject any calls from layer 5 if there is a packet already being sent and waiting for an awk
-		if not self.message_in_transit:
-
-			# global message to resend if it fails
-			self.global_message = message
+		if self.next_sequence_num < self.base + self.N:
 
 			# checksum to check for corruption when it gets to b
 			checksum = 0
 			for char in message.get_data():
 				checksum += ord(char)
-
-			checksum = checksum + self.alternating_bit_a + self.alternating_bit_a	
+			checksum = checksum + self.next_sequence_num + self.next_sequence_num
 
 			# create the packet to send to the transport layer
-			packet2 = Packet(self.alternating_bit_a, self.alternating_bit_a, checksum, message.get_data())
+			packet2 = Packet(self.next_sequence_num, self.next_sequence_num, checksum, message.get_data())
 
-			# boolean to keep track of whether or not a packet is currently being sent from A
-			self.message_in_transit = True
-
-			# start timer to check for a timeout
-			self.start_timer(0, 1000)
+			# add to send packets data
+			if self.next_sequence_num in self.send_packets:
+				print("ERROR: SEQUENCE NUMBER ALREADY IN USE!")
+			else:
+				self.send_packets[self.next_sequence_num] = packet2
 
 			# send the packet to the transport layer
 			self.to_layer3(0, packet2)
 
+			# start timer to check for a timeout
+			if self.base == self.next_sequence_num:
+				self.start_timer(0, self.timer_amount)
+
+			# increment sequence number
+			self.next_sequence_num = self.next_sequence_num + 1
+
 			# statistic for output
 			self.sent_packets = self.sent_packets + 1
 		else:
-			print("message discarded because a current message is in progress")
-			print('message: ', message.get_data())
-			self.message_discarded = self.message_discarded + 1
+			if len(self.buffer) < 50:
+				self.buffer.append(message)
+				self.buffer_used = self.buffer_used + 1
+			else:
+				print("message discarded because a current message is in progress")
+				print('message: ', message.get_data())
+				self.message_discarded = self.message_discarded + 1
 		return
 
 	# This routine will be called whenever a packet sent from the B-side
@@ -195,55 +209,63 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 		"""
 
 		self.received_acks = self.received_acks + 1
-		self.message_in_transit = False
-		self.stop_timer(0)
 
 		# extract the payload from the packet received from layer 3 and turn it into a message
 		message_from_b = Message(packet.get_payload())
-
 
 		# corruption calculation
 		checksum_check = 0
 		for char in message_from_b.get_data():
 			checksum_check += ord(char)
 
-		checksum_check = checksum_check + packet.get_seqnum() + packet.get_acknum()
+		checksum_check = checksum_check + packet.get_acknum() + packet.get_seqnum()
 
 		# check if checksum is correct
-		if packet.get_checksum() != checksum_check:
+		if packet.get_checksum() != checksum_check or packet.get_seqnum() != packet.get_acknum():
 			print("Corruption detected: bad checksum for ack")
-			print("retransmitting: ", self.global_message.get_data())
-			self.resent_message = True
 			self.corrupt_acks = self.corrupt_acks + 1
-			self.a_output(self.global_message)
 			return
 
-		# check to see if ack number was the one just sent, if not resend the last message
-		if packet.get_acknum() != self.alternating_bit_a:
-			print("Corruption detected (Bad Ack num): retransmitting: ")
-			print("retransmitting: ", self.global_message.get_data())
-			self.resent_message = True
-			self.incorrect_acks = self.incorrect_acks + 1
-			self.a_output(self.global_message)
+		print("ack number received: ", packet.get_acknum())
+
+		if self.successful_acks + 1 != self.base:
+			# awk received okay, change the base to ack + 1
+			self.successful_acks = self.successful_acks + 1
+
+			# increment the timer amount
+			if self.timer_amount == 10:
+				self.timer_amount = 15
+			elif self.timer_amount == 15:
+				self.timer_amount = 20
+			elif self.timer_amount == 20:
+				self.timer_amount = 25
+			elif self.timer_amount == 25:
+				self.timer_amount = 30
+			elif self.timer_amount == 30:
+				self.timer_amount = 35
+			elif self.timer_amount == 35:
+				self.timer_amount = 40
+
+		self.base = packet.get_acknum() + 1
+		print("base number: ", self.base)
+		delete_nums = []
+		for seq_num, packet_stored in self.send_packets.items():
+			if packet.get_acknum() >= seq_num:
+				delete_nums.append(seq_num)
+		for x in delete_nums:
+			del self.send_packets[x]
+
+		if self.base == self.next_sequence_num:
+			self.stop_timer(0)
+			while len(self.buffer) > 0:
+				self.a_output(self.buffer.pop(0))
+		elif self.next_sequence_num - self.base < self.N:
+			self.stop_timer(0)
+			if len(self.buffer) > 0:
+				while len(self.buffer) > 0 and self.next_sequence_num - self.base < self.N:
+					self.a_output(self.buffer.pop(0))
+			self.start_timer(0, self.timer_amount)
 			return
-
-		# check to see if the awk was corrupted
-		if packet.get_acknum() != packet.get_seqnum():
-			print("Corruption detected: ack and packet num do not match")
-			print("retransmitting: ", self.global_message.get_data())
-			self.resent_message = True
-			self.corrupt_acks = self.corrupt_acks + 1
-			self.a_output(self.global_message)
-			return
-
-
-		# awk received okay, change the alternating_bit for A
-		self.successful_acks = self.successful_acks + 1
-		if self.alternating_bit_a == 1:
-			self.alternating_bit_a = 0
-		else:
-			self.alternating_bit_a = 1
-		return
 
 	# This routine will be called when A's timer expires (thus generating a
 	# timer interrupt). You'll probably want to use this routine to control
@@ -254,16 +276,17 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 
 		self.lost_packets_or_acks = self.lost_packets_or_acks + 1
 
+		# Retransmitting window data
 		print("Timeout detected: Packet or ack loss)")
-		print("retransmitting: ", self.global_message.get_data())
-		# Turn the boolean off because there has been a timeout and the packet or the awk clearly isnt in transit anymore
-		self.message_in_transit = False
 
-		self.resent_message = True
-
-		# resend the message to layer 3 from A
-		self.a_output(self.global_message)
-		pass
+		for seq_num, packet in self.send_packets.items():
+			print("retransmitting: ", self.send_packets[seq_num].get_payload())
+			# increase resent count
+			self.resent_messages = self.resent_messages + 1
+			# resend the message to layer 3 from A
+			self.to_layer3(0, packet)
+			if self.base == seq_num:
+				self.start_timer(0, self.timer_amount)
 
 	# This routine will be called once, before any of your other A-side
 	# routines are called. It can be used to do any required
@@ -272,14 +295,20 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 
 	def a_init(self):
 
-		# Set the alternating bit of A
-		self.alternating_bit_a = 0
+		# sequence number for packets being sent out
+		self.next_sequence_num = 0
 
-		# Set the boolean that a message is not currently in the transport layer
-		self.message_in_transit = False
+		# number of the base of the sliding window
+		self.base = 0
 
-		# Set the message to store in case of a lost packet to blank
-		self.global_message = Message("")
+		# size of the sliding window
+		self.N = 8
+
+		# dictionary for packets to be stored in case of a drop of the packets
+		self.send_packets = {}
+
+		# timer amount until the A resends a message
+		self.timer_amount = 10
 
 		# Stats in A
 		self.received_messages = 0
@@ -291,6 +320,8 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 		self.resent_messages = 0
 		self.resent_message = False
 		self.message_discarded = 0
+		self.buffer = []
+		self.buffer_used = 0
 
 		# Shared
 		self.lost_packets_or_acks = 0
@@ -312,10 +343,9 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 		checksum_check = 0
 		for char in self.message_to_5.get_data():
 			checksum_check += ord(char)
-
 		checksum_check = checksum_check + packet.get_seqnum() + packet.get_acknum()
 
-		if checksum_check != packet.get_checksum():
+		if checksum_check != packet.get_checksum() or packet.get_seqnum() != packet.get_acknum():
 			print('Corruption Detected!')
 			print('Checksum Field: ', packet.get_checksum())
 			print('calculated: ', checksum_check)
@@ -324,65 +354,37 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 			self.to_layer3(1, self.send_packet_b)
 			return
 
-		# check to see if correct alternating bits were sent
-		if self.alternating_bit_b == 0:
+		# if correct alternating bit not rec, send the awk of the of the number you wish to receive
+		if packet.get_seqnum() != self.expected_sequence_num:
+			print('Received wrong sequence number!')
+			print('Expected: ', self.expected_sequence_num)
+			print('Received: ', packet.get_seqnum())
+			self.incorrect_sequence_nums = self.incorrect_sequence_nums + 1
+			self.sent_acks = self.sent_acks + 1
+			self.to_layer3(1, self.send_packet_b)
+			return
 
-			# if correct alternating bit not rec, send the awk of the of the number you wish to receive
-			if packet.get_seqnum() != 0:
-				print('Received wrong sequence number!')
-				print('Expected: ', 0)
-				print('Received: ', packet.get_seqnum())
-				self.incorrect_sequence_nums = self.incorrect_sequence_nums + 1
-				self.sent_acks = self.sent_acks + 1
-				self.to_layer3(1, self.send_packet_b)
-				return
+		# correct packet number received
+		self.correct_sequence_nums = self.correct_sequence_nums + 1
 
-			# correct packet number received
-			else:
-				self.correct_sequence_nums = self.correct_sequence_nums + 1
+		# deliver the packet to layer 5
+		self.to_layer5(1, self.message_to_5)
 
-				# deliver the packet to layer 5
-				self.to_layer5(1, self.message_to_5)
+		checksum = 0
+		for char in packet.get_payload():
+			checksum += ord(char)
+		checksum = checksum + self.expected_sequence_num + self.expected_sequence_num
 
-				# create an awk packet of the correct packet being seen
-				self.send_packet_b = Packet(self.alternating_bit_b, self.alternating_bit_b, checksum_check, packet.get_payload())
+		# create an awk packet of the correct packet being seen
+		self.send_packet_b = Packet(self.expected_sequence_num, self.expected_sequence_num, checksum, packet.get_payload())
 
-				self.sent_acks = self.sent_acks + 1
-				# send the awk packet back to A
-				self.to_layer3(1, self.send_packet_b)
+		self.sent_acks = self.sent_acks + 1
+		# send the awk packet back to A
+		self.to_layer3(1, self.send_packet_b)
 
-				# change the alternating bit for next call
-				self.alternating_bit_b = 1
-				return
-		else:
-
-			# if correct alternating bit not rec, send the awk of the of the number you wish to receive
-			if packet.get_seqnum() != 1:
-				print('Received wrong sequence number!')
-				print('Expected: ', 1)
-				print('Received: ', packet.get_seqnum())
-				self.incorrect_sequence_nums = self.incorrect_sequence_nums + 1
-				self.sent_acks = self.sent_acks + 1
-				self.to_layer3(1, self.send_packet_b)
-				return
-
-			# correct packet number received
-			else:
-
-				self.correct_sequence_nums = self.correct_sequence_nums + 1
-				# deliver the packet to layer 5
-				self.to_layer5(1, self.message_to_5)
-
-				# create an awk packet of the correct packet being seen
-				self.send_packet_b = Packet(self.alternating_bit_b, self.alternating_bit_b, checksum_check, packet.get_payload())
-
-				self.sent_acks = self.sent_acks + 1
-				# send the awk packet back to A
-				self.to_layer3(1, self.send_packet_b)
-
-				# change the alternating bit for next call
-				self.alternating_bit_b = 0
-				return
+		# change the expected sequence number to the next
+		self.expected_sequence_num = self.expected_sequence_num + 1
+		return
 
 	# This routine will be called once, before any of your other B-side
 	# routines are called. It can be used to do any required
@@ -390,14 +392,13 @@ class StudentNetworkSimulator(NetworkSimulator, object):
 	# of entity B).
 	def b_init(self):
 
-		# Set the alternating bit of B
-		self.alternating_bit_b = 0
-
-		# Set the default message back in case there is an a wrong packet sent first, first packet should be seq 0
-		self.send_packet_b = Packet(1, 1, 0, "")
+		# Set the expected sequence number for B
+		self.expected_sequence_num = 0
 
 		# Set a message object that will be transported to top layer 5 from B
 		self.message_to_5 = Message("")
+
+		self.send_packet_b = Packet(-1, -1, 0, "")
 
 		# IN B
 		self.corrupt_packets_from_a = 0

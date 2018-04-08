@@ -113,7 +113,7 @@ def main():
     # A Output
     print('received messages from layer 5:', '\t', simulator.received_messages)
     print('sent packets to b: ', '\t', simulator.sent_packets)
-    print('messages discarded because a current message in transit: ', '\t', simulator.message_discarded)
+    print('messages discarded because buffer is full: ', '\t', simulator.message_discarded)
 
     # B input
     print('received packets from a: ', '\t', simulator.received_packets_from_a)
@@ -123,7 +123,7 @@ def main():
     print('Sent acks: ', '\t', simulator.sent_acks)
 
     # Timeout
-    print('Lost packets or acks: ', '\t', simulator.lost_packets_or_acks)
+    print('Lost retransmission happening: ', '\t', simulator.lost_packets_or_acks)
     print('Resent packets because of loss: ', '\t', simulator.resent_messages)
 
     # A input
@@ -131,6 +131,8 @@ def main():
     print('Successful acks: ', '\t', simulator.successful_acks)
     print('Corrupt acks: ', '\t', simulator.corrupt_acks)
     print('incorrect acks: ', '\t', simulator.incorrect_acks)
+    print('buffer used: ', '\t', simulator.buffer_used)
+    print('messages still in buffer: ', '\t', len(simulator.buffer))
 
 
 
